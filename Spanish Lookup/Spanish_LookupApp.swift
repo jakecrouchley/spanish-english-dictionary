@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct Spanish_LookupApp: App {
+    @StateObject private var dataController = DataController()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

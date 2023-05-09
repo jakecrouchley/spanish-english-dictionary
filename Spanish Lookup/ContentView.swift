@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List(words) { word in
+                Text(word.source_word ?? "Unknown")
+            }
+            Button("Add") {
+                let word = Word(context: managedObjectContext)
+                word.source_word = "Abandonar"
+                try? managedObjectContext.save()
+            }
+            Button("Clear") {
+                managedObjectContext.delete(words[0])
+                try? managedObjectContext.save()
+            }
         }
-        .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

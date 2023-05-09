@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Conjugation" representedClassName="Conjugation" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mood" optional="YES" attributeType="String"/>
+        <attribute name="tense" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ConjugationGroup" representedClassName="ConjugationGroup" parentEntity="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="gerund" optional="YES" attributeType="String"/>
+        <attribute name="past_participle" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Section" representedClassName="Section" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>
+    </entity>
+    <entity name="Word" representedClassName="Word" parentEntity="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="definition" optional="YES" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="source_lang" optional="YES" attributeType="String"/>
+        <attribute name="source_word" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="WordList" representedClassName="WordList" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item"/>
+    </entity>
+</model>
