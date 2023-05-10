@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-class DataController: ObservableObject {
+class DataController: ObservableObject, DictParserDelegate {
     let container = NSPersistentContainer(name: "Model")
     
     init() {
@@ -17,7 +17,8 @@ class DataController: ObservableObject {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
-        parseDict()
+//        clearAllWords()
+//        parseDict()
     }
     
     func parseDict() {
@@ -28,6 +29,7 @@ class DataController: ObservableObject {
                 print(xmlData.count)
                 let xmlParser = XMLParser(data: xmlData)
                 let dictParser = DictParser()
+                dictParser.delegate = self
                 xmlParser.delegate = dictParser
                 xmlParser.parse()
             } catch let error {
@@ -40,10 +42,27 @@ class DataController: ObservableObject {
 
     }
     
-    func saveWord() {
+    func clearAllWords() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Word")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
         let managedObjectContext = container.viewContext
-        let word = Word(context: managedObjectContext)
-        word.source_word = "Pregenerated"
+        do {
+            try managedObjectContext.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func saveWord(word: DraftWord) {
+        let managedObjectContext = container.viewContext
+        let newWord = Word(context: managedObjectContext)
+        newWord.id = UUID()
+        newWord.source_word = word.source_word ?? ""
+        newWord.definition = word.definition ?? ""
+        newWord.details = word.details ?? ""
+        newWord.source_lang = word.source_lang ?? ""
         try? managedObjectContext.save()
     }
+    
 }
