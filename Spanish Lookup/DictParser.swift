@@ -75,7 +75,7 @@ class DictParser: NSObject, XMLParserDelegate {
             // New word
             draftWord?.source_lang = sourceLang
             if let newWord = draftWord {
-                delegate?.saveWord(word: newWord)
+                delegate?.addWord(word: newWord)
             } else {
                 print("Could not save word: \(String(describing: draftWord))")
             }
@@ -92,5 +92,5 @@ class DictParser: NSObject, XMLParserDelegate {
 }
 
 protocol DictParserDelegate {
-    func saveWord(word: DraftWord) -> Void
+    func addWord(word: DraftWord) -> Void
 }

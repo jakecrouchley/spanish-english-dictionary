@@ -10,6 +10,7 @@ import Foundation
 
 class DataController: ObservableObject, DictParserDelegate {
     let container = NSPersistentContainer(name: "Model")
+    var words: [[String: Any]] = []
     
     init() {
         container.loadPersistentStores { description, error in
@@ -17,11 +18,14 @@ class DataController: ObservableObject, DictParserDelegate {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
+        // TODO: conditionally run these lines on first startup
 //        clearAllWords()
-//        parseDict()
+//        parseEnToEsDict()
+//        parseEsToEnDict()
+//        saveWords()
     }
     
-    func parseDict() {
+    func parseEnToEsDict() {
         if let path = Bundle.main.path(forResource: "en-es", ofType: "xml") {
             do {
                 let url = URL(fileURLWithPath: path)
@@ -39,7 +43,26 @@ class DataController: ObservableObject, DictParserDelegate {
         } else {
             print("File not found")
         }
-
+    }
+    
+    func parseEsToEnDict() {
+        if let path = Bundle.main.path(forResource: "es-en", ofType: "xml") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let xmlData = try Data(contentsOf: url)
+                print(xmlData.count)
+                let xmlParser = XMLParser(data: xmlData)
+                let dictParser = DictParser()
+                dictParser.delegate = self
+                xmlParser.delegate = dictParser
+                xmlParser.parse()
+            } catch let error {
+                // Handle error here
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
     }
     
     func clearAllWords() {
@@ -54,15 +77,22 @@ class DataController: ObservableObject, DictParserDelegate {
         }
     }
     
-    func saveWord(word: DraftWord) {
+    func addWord(word: DraftWord) {
+        var newWord: [String: Any] = [:]
+        newWord["id"] = UUID()
+        newWord["source_word"] = word.source_word ?? ""
+        newWord["definition"] = word.definition ?? ""
+        newWord["details"] = word.details ?? ""
+        newWord["source_lang"] = word.source_lang ?? ""
+        newWord["first_char"] = String(word.source_word?.first ?? Character("")).lowercased()
+        words.append(newWord)
+    }
+    
+    func saveWords() {
         let managedObjectContext = container.viewContext
-        let newWord = Word(context: managedObjectContext)
-        newWord.id = UUID()
-        newWord.source_word = word.source_word ?? ""
-        newWord.definition = word.definition ?? ""
-        newWord.details = word.details ?? ""
-        newWord.source_lang = word.source_lang ?? ""
-        try? managedObjectContext.save()
+        let batchRequest = NSBatchInsertRequest(entity: Word.entity(), objects: words)
+        let result = try? managedObjectContext.execute(batchRequest)
+        print(result)
     }
     
 }
