@@ -10,11 +10,10 @@ import CoreData
 
 @main
 struct Spanish_LookupApp: App {
-    @StateObject private var dataController = DataController()
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, dataController.container.viewContext)
+            ContentView().environment(\.managedObjectContext, DataController.shared.container.viewContext)
         }
     }
 }

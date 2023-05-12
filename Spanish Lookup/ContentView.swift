@@ -6,40 +6,45 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
-//    @FetchRequest(sortDescriptors: [SortDescriptor(\.source_word)]) var words: FetchedResults<Word>
-    
-    @SectionedFetchRequest(
-        sectionIdentifier: \.first_char,
-        sortDescriptors: [SortDescriptor(\.first_char), SortDescriptor(\.source_word)],
-        animation: .default)
+    @SectionedFetchRequest
     private var words: SectionedFetchResults<String?, Word>
-    
-    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     
     @State private var searchTerm: String = ""
     @FocusState private var searchFieldIsFocused: Bool
     
+    let nsSortDescriptors = [NSSortDescriptor(key: "first_char", ascending: true), NSSortDescriptor(key: "source_word", ascending: true)]
+    
     var searchQuery: Binding<String> {
-      Binding {
-        // 1
-        searchTerm
-      } set: { newValue in
-        // 2
-        searchTerm = newValue
-        
-        // 3
-        guard !newValue.isEmpty else {
-          words.nsPredicate = nil
-          return
-        }
+        Binding {
+            searchTerm
+        } set: { newValue in
+            searchTerm = newValue
 
-        // 4
-        words.nsPredicate = NSPredicate(
-          format: "source_word contains[cd] %@",
-          newValue)
-      }
+            guard !newValue.isEmpty else {
+                let config = words
+                config.nsPredicate = nil
+                config.nsSortDescriptors = nsSortDescriptors
+                return
+            }
+            
+            let config = words
+            config.nsPredicate = NSPredicate(
+            format: "source_word contains[cd] %@",
+            newValue)
+            config.sortDescriptors = [SortDescriptor(\.source_word, order: .reverse)]
+        }
+    }
+    
+    init() {
+        let request: NSFetchRequest<Word> = Word.fetchRequest()
+        request.sortDescriptors = nsSortDescriptors
+        request.fetchLimit = 10
+        _words = SectionedFetchRequest(fetchRequest: request, sectionIdentifier: \.first_char)
     }
 
 
@@ -48,64 +53,17 @@ struct ContentView: View {
             List(words) { section in
                 Section(header: Text(section.id ?? "")) {
                     ForEach(section) {word in
-                        WordRow(word: word)
+                        WordRow(word: word).onAppear(perform: {
+                            print("\(word.source_word ?? "") appeared")
+                        })
                     }
                 }
             }
             .listStyle(.plain)
+            .padding(.zero)
         }.searchable(text: searchQuery, placement: .navigationBarDrawer(displayMode: .always))
-            .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
-    }
-}
-
-struct WordRow: View {
-    var word: Word
-
-    var body: some View {
-        NavigationLink {
-            WordDetailView(word: word)
-        } label: {
-            HStack {
-                Image(word.source_lang == "en" ? "en_flag" : "es_flag").resizable()
-                    .frame(
-                        width: 32,
-                        height: 32,
-                        alignment: .topLeading
-                    )
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(word.source_word ?? "")
-                        .foregroundColor(.primary)
-                        .font(.headline)
-                    Text(word.definition ?? "")
-                        .foregroundColor(.secondary)
-                        .font(.subheadline)
-                        .lineLimit(1)
-                    Text(word.details ?? "")
-                        .foregroundColor(.secondary)
-                        .font(.subheadline.italic())
-                        .lineLimit(1)
-                }
-            }
-        }
-    }
-}
-
-struct WordDetailView: View {
-    var word: Word
-    
-    var body: some View {
-        HStack (alignment: .top) {
-            VStack(alignment: .leading) {
-                Text(word.definition ?? "")
-                    .font(.subheadline)
-                Text(word.details ?? "")
-                    .font(.subheadline.italic())
-                Spacer()
-            }
-            Spacer()
-        }
-        .padding(.horizontal, 16)
-        .navigationTitle(word.source_word ?? "")
+            .padding(.zero)
+            
     }
 }

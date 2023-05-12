@@ -9,6 +9,9 @@ import CoreData
 import Foundation
 
 class DataController: ObservableObject, DictParserDelegate {
+    
+    static let shared = DataController()
+    
     let container = NSPersistentContainer(name: "Model")
     var words: [[String: Any]] = []
     
