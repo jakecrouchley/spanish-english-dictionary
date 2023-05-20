@@ -23,6 +23,7 @@
 		4F69991B2A0E28D70026CBFA /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69991A2A0E28D70026CBFA /* WordRow.swift */; };
 		4F69991D2A0E28FA0026CBFA /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69991C2A0E28FA0026CBFA /* WordDetailView.swift */; };
 		4F9B19C02A191A0A00A7F01D /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B19BF2A191A0A00A7F01D /* WordListView.swift */; };
+		4F9B19C42A19328F00A7F01D /* Word+Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B19C32A19328F00A7F01D /* Word+Example.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4F69991A2A0E28D70026CBFA /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 		4F69991C2A0E28FA0026CBFA /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		4F9B19BF2A191A0A00A7F01D /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
+		4F9B19C32A19328F00A7F01D /* Word+Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Example.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		4F6998E22A0550780026CBFA = {
 			isa = PBXGroup;
 			children = (
+				4F9B19C32A19328F00A7F01D /* Word+Example.swift */,
 				4F6999132A0AE0780026CBFA /* Spanish Lookup */,
 				4F6998EC2A0550780026CBFA /* Products */,
 			);
@@ -202,6 +205,7 @@
 				4F6998EF2A0550780026CBFA /* Spanish_LookupApp.swift in Sources */,
 				4F69991B2A0E28D70026CBFA /* WordRow.swift in Sources */,
 				4F6999192A0E273C0026CBFA /* WordsProvider.swift in Sources */,
+				4F9B19C42A19328F00A7F01D /* Word+Example.swift in Sources */,
 				4F69991D2A0E28FA0026CBFA /* WordDetailView.swift in Sources */,
 				4F6998FE2A05511E0026CBFA /* ListView.swift in Sources */,
 				4F6999042A0976340026CBFA /* Model.xcdatamodeld in Sources */,

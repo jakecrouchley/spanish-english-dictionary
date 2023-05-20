@@ -12,6 +12,19 @@ class WordsProvider: ObservableObject, DictParserDelegate {
     
     static let shared = WordsProvider()
     
+    static let preview: WordsProvider = {
+        let wordsProvider = WordsProvider(inMemory: true)
+        let context = wordsProvider.container.viewContext
+        let exampleWord = Word(context: context)
+        exampleWord.source_word = "apple"
+        exampleWord.definition = "manzana"
+        exampleWord.source_lang = "en"
+        exampleWord.details = "{noun} a round fruit"
+        exampleWord.first_char = "a"
+        try? context.save()
+        return wordsProvider
+    }()
+    
     let container = NSPersistentContainer(name: "Model")
     var words: [[String: Any]] = []
     
@@ -25,13 +38,14 @@ class WordsProvider: ObservableObject, DictParserDelegate {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
-        // TODO: conditionally run these lines on first startup
-        let dictParser = DictParser()
-        dictParser.delegate = self
-        clearAllWords()
-        dictParser.parseEnToEsDict()
-        dictParser.parseEsToEnDict()
-        saveWords()
+        if (!inMemory) {
+            clearAllWords()
+            let dictParser = DictParser()
+            dictParser.delegate = self
+            dictParser.parseEnToEsDict()
+            dictParser.parseEsToEnDict()
+            saveWords(words: words)
+        }
     }
     
     func clearAllWords() {
@@ -56,10 +70,10 @@ class WordsProvider: ObservableObject, DictParserDelegate {
         words.append(newWord)
     }
     
-    func saveWords() {
+    func saveWords(words: [[String:Any]]) {
         let managedObjectContext = container.viewContext
         let batchRequest = NSBatchInsertRequest(entity: Word.entity(), objects: words)
-        let result = try? managedObjectContext.execute(batchRequest)
+        let _ = try? managedObjectContext.execute(batchRequest)
     }
     
 }

@@ -39,11 +39,16 @@ struct WordRow: View {
     }
 }
 
-//struct WordRow_Previews: PreviewProvider {
-////    let word = DataController.shared.
-//    
-//    static var previews: some View {
-//        WordRow(word: nil)
-//    }
-//}
+struct WordRow_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            WordRow(word: Word.example)
+                .previewLayout(.sizeThatFits)
+            List {
+                WordRow(word: Word.example)
+                    .previewLayout(.fixed(width: 300, height: 100))
+            }
+        }
+    }
+}
 
