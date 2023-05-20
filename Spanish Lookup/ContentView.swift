@@ -24,14 +24,13 @@ struct ContentView: View {
             searchTerm
         } set: { newValue in
             searchTerm = newValue
-
             guard !newValue.isEmpty else {
                 let config = words
                 config.nsPredicate = nil
                 config.nsSortDescriptors = nsSortDescriptors
                 return
             }
-            
+
             let config = words
             config.nsPredicate = NSPredicate(
             format: "source_word contains[cd] %@",
@@ -42,28 +41,29 @@ struct ContentView: View {
     
     init() {
         let request: NSFetchRequest<Word> = Word.fetchRequest()
+        request.predicate = nil
         request.sortDescriptors = nsSortDescriptors
-        request.fetchLimit = 10
+//        request.fetchLimit = 10
+//        request.includesPropertyValues = false
+        request.returnsObjectsAsFaults = false
         _words = SectionedFetchRequest(fetchRequest: request, sectionIdentifier: \.first_char)
+        print("init ContentView")
     }
-
 
     var body: some View {
         NavigationStack {
             List(words) { section in
                 Section(header: Text(section.id ?? "")) {
                     ForEach(section) {word in
-                        WordRow(word: word).onAppear(perform: {
-                            print("\(word.source_word ?? "") appeared")
-                        })
+                        WordRow(word: word)
                     }
                 }
             }
             .listStyle(.plain)
             .padding(.zero)
+            .id(UUID())
         }.searchable(text: searchQuery, placement: .navigationBarDrawer(displayMode: .always))
             .textInputAutocapitalization(.never)
             .padding(.zero)
-            
     }
 }
