@@ -23,6 +23,8 @@
 		4F6999192A0E273C0026CBFA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6999182A0E273C0026CBFA /* DataController.swift */; };
 		4F69991B2A0E28D70026CBFA /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69991A2A0E28D70026CBFA /* WordRow.swift */; };
 		4F69991D2A0E28FA0026CBFA /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69991C2A0E28FA0026CBFA /* WordDetailView.swift */; };
+		4F69991F2A0E379C0026CBFA /* FilteredWordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69991E2A0E379C0026CBFA /* FilteredWordList.swift */; };
+		4F6999212A0E50DC0026CBFA /* WordFetchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6999202A0E50DC0026CBFA /* WordFetchConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		4F6999182A0E273C0026CBFA /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4F69991A2A0E28D70026CBFA /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 		4F69991C2A0E28FA0026CBFA /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
+		4F69991E2A0E379C0026CBFA /* FilteredWordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredWordList.swift; sourceTree = "<group>"; };
+		4F6999202A0E50DC0026CBFA /* WordFetchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFetchConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 				4F6998EE2A0550780026CBFA /* Spanish_LookupApp.swift */,
 				4F6998FD2A05511D0026CBFA /* ListView.swift */,
 				4F6998F02A0550780026CBFA /* ContentView.swift */,
+				4F6999202A0E50DC0026CBFA /* WordFetchConfig.swift */,
 				4F69991A2A0E28D70026CBFA /* WordRow.swift */,
+				4F69991E2A0E379C0026CBFA /* FilteredWordList.swift */,
 				4F69991C2A0E28FA0026CBFA /* WordDetailView.swift */,
 				4F6999072A0ADCE90026CBFA /* DictParser.swift */,
 				4F6998F22A0550790026CBFA /* Assets.xcassets */,
@@ -202,9 +208,11 @@
 				4F6998EF2A0550780026CBFA /* Spanish_LookupApp.swift in Sources */,
 				4F69991B2A0E28D70026CBFA /* WordRow.swift in Sources */,
 				4F6999192A0E273C0026CBFA /* DataController.swift in Sources */,
+				4F6999212A0E50DC0026CBFA /* WordFetchConfig.swift in Sources */,
 				4F69991D2A0E28FA0026CBFA /* WordDetailView.swift in Sources */,
 				4F6998FE2A05511E0026CBFA /* ListView.swift in Sources */,
 				4F6999042A0976340026CBFA /* Model.xcdatamodeld in Sources */,
+				4F69991F2A0E379C0026CBFA /* FilteredWordList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
