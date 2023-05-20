@@ -22,13 +22,15 @@ class DictParser: NSObject, XMLParserDelegate {
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
     
     var timestamp = 0
-    var sectionCount = 0
     var accumText = ""
-    
-    var startingLetter = ""
     
     var draftWord: DraftWord?
     var sourceLang = ""
+    
+    func resetParser() {
+        accumText = ""
+        sourceLang = ""
+    }
     
     func parserDidStartDocument(_ parser: XMLParser) {
         timestamp = Int(NSDate().timeIntervalSince1970 * 1000)
@@ -45,10 +47,6 @@ class DictParser: NSObject, XMLParserDelegate {
             sourceLang = attributeDict["from"] ?? "en"
             break
         case "l":
-            // New section
-            let index = alphabet.index(alphabet.startIndex, offsetBy: sectionCount)
-            startingLetter = String(alphabet[index])
-            sectionCount += 1
             break
         case "w":
             // New word
@@ -88,6 +86,43 @@ class DictParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         accumText = accumText + string
+    }
+    
+    func parseEnToEsDict() {
+        resetParser()
+        if let path = Bundle.main.path(forResource: "en-es", ofType: "xml") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let xmlData = try Data(contentsOf: url)
+                let xmlParser = XMLParser(data: xmlData)
+                xmlParser.delegate = self
+                xmlParser.parse()
+            } catch let error {
+                // Handle error here
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
+    }
+    
+    func parseEsToEnDict() {
+        resetParser()
+        if let path = Bundle.main.path(forResource: "es-en", ofType: "xml") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let xmlData = try Data(contentsOf: url)
+                print(xmlData.count)
+                let xmlParser = XMLParser(data: xmlData)
+                xmlParser.delegate = self
+                xmlParser.parse()
+            } catch let error {
+                // Handle error here
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
     }
 }
 

@@ -38,3 +38,12 @@ struct WordRow: View {
         }
     }
 }
+
+//struct WordRow_Previews: PreviewProvider {
+////    let word = DataController.shared.
+//    
+//    static var previews: some View {
+//        WordRow(word: nil)
+//    }
+//}
+

@@ -35,7 +35,7 @@ struct ContentView: View {
             config.nsPredicate = NSPredicate(
             format: "source_word contains[cd] %@",
             newValue)
-            config.sortDescriptors = [SortDescriptor(\.source_word, order: .reverse)]
+            config.sortDescriptors = [SortDescriptor(\.source_word, order: .forward)]
         }
     }
     
@@ -65,5 +65,13 @@ struct ContentView: View {
         }.searchable(text: searchQuery, placement: .navigationBarDrawer(displayMode: .always))
             .textInputAutocapitalization(.never)
             .padding(.zero)
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        ContentView()
+            .environment(\.managedObjectContext, WordsProvider.shared.container.viewContext)
     }
 }
