@@ -8,11 +8,32 @@
 import SwiftUI
 import CoreData
 
+enum SelectedPage: String {
+    case dictionary, conjugations
+}
+
 struct ContentView: View {
+    
+    @State private var selectedPage: SelectedPage = SelectedPage.dictionary
+    
+    @State private var searchTerm = ""
     
     var body: some View {
         NavigationStack {
-            WordListView()
+            Picker("Selected Page", selection: $selectedPage) {
+                Text("Dictionary").tag(SelectedPage.dictionary)
+                Text("Conjugations").tag(SelectedPage.conjugations)
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal, 20)
+            if (selectedPage == .dictionary) {
+                WordListView()
+            } else {
+                List {
+                    Text("Test")
+                }
+                .searchable(text: $searchTerm)
+            }
         }
     }
 }
