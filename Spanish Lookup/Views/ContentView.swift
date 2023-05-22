@@ -29,10 +29,7 @@ struct ContentView: View {
             if (selectedPage == .dictionary) {
                 WordListView()
             } else {
-                List {
-                    Text("Test")
-                }
-                .searchable(text: $searchTerm)
+                ConjugationListView()
             }
         }
     }

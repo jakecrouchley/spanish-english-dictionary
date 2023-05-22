@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Conjugation" representedClassName="Conjugation" syncable="YES" codeGenerationType="class">
+        <attribute name="conjugation" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mood" optional="YES" attributeType="String"/>
+        <attribute name="person" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tense" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="conjugation_group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConjugationGroup" inverseName="conjugations" inverseEntity="ConjugationGroup"/>
     </entity>
-    <entity name="ConjugationGroup" representedClassName="ConjugationGroup" parentEntity="Item" syncable="YES" codeGenerationType="class">
+    <entity name="ConjugationGroup" representedClassName="ConjugationGroup" parentEntity="Item" syncable="YES">
         <attribute name="gerund" optional="YES" attributeType="String"/>
         <attribute name="infinitive" optional="YES" attributeType="String"/>
+        <attribute name="infinitive_english" optional="YES" attributeType="String"/>
         <attribute name="past_participle" optional="YES" attributeType="String"/>
+        <relationship name="conjugations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Conjugation" inverseName="conjugation_group" inverseEntity="Conjugation"/>
     </entity>
     <entity name="Item" representedClassName="Item" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="first_char" optional="YES" attributeType="String"/>

@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "DataController.parseDict():DataController.swift">
+         contextName = "ConjugationParser.parse():ConjugationParser.swift">
       </ContextState>
       <ContextState
          contextName = "DictParser.parser(_:didStartElement:namespaceURI:qualifiedName:attributes:):DictParser.swift">
@@ -12,6 +12,20 @@
                value = "alphabet">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ConjugationGroup.conjugationsArray.getter:ConjugationGroup+CoreDataProperties.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ConjugationMood.RawValue(stringLiteral: &quot;Imperative Affirmative&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in ConjugationParser.parse():ConjugationParser.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DataController.parseDict():DataController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

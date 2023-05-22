@@ -8,7 +8,14 @@
 import CoreData
 import Foundation
 
-class WordsProvider: ObservableObject, DictParserDelegate {
+struct DraftWord {
+    var source_word: String?
+    var source_lang: String?
+    var definition: String?
+    var details: String?
+}
+
+class WordsProvider: ObservableObject, DictParserDelegate, ConjugationParserDelegate {
     
     static let shared = WordsProvider()
     
@@ -21,6 +28,21 @@ class WordsProvider: ObservableObject, DictParserDelegate {
         exampleWord.source_lang = "en"
         exampleWord.details = "{noun} a round fruit"
         exampleWord.first_char = "a"
+        
+        
+        let exampleConjugationGroup = ConjugationGroup(context: context)
+        exampleConjugationGroup.infinitive = "abandonar"
+        exampleConjugationGroup.infinitive_english = "To abandon"
+        exampleConjugationGroup.gerund = "abandonando"
+        exampleConjugationGroup.past_participle = "abandonado"
+        exampleConjugationGroup.first_char = "a"
+        
+        let exampleConjugation = Conjugation(context: context)
+        exampleConjugation.type = "singular"
+        exampleConjugation.mood = "Indicative"
+        exampleConjugation.tense = "Present"
+        exampleConjugation.conjugation = "abandono"
+        
         try? context.save()
         return wordsProvider
     }()
@@ -39,12 +61,20 @@ class WordsProvider: ObservableObject, DictParserDelegate {
             }
         }
         if (!inMemory) {
-            clearAllWords()
-            let dictParser = DictParser()
-            dictParser.delegate = self
-            dictParser.parseEnToEsDict()
-            dictParser.parseEsToEnDict()
-            saveWords(words: words)
+//            clearAllWords()
+//
+//            let dictParser = DictParser()
+//            dictParser.delegate = self
+//            dictParser.run()
+//
+//
+//
+//            saveWords(words: words)
+            
+//            let conjugationParser = ConjugationParser()
+//            conjugationParser.delegate = self
+//            conjugationParser.clearAll()
+//            conjugationParser.run()
         }
     }
     
