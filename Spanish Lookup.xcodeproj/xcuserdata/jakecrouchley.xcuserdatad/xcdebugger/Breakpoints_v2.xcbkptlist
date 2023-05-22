@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E4CD31D7-6AB7-4107-B3A7-EE5BC5062506"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ConjugationGroup+CoreDataProperties.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "conjugationsByMoodArray"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A6F57440-9ABA-47E9-AC47-04C89FD828E9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -110,8 +94,8 @@
             filePath = "ConjugationGroup+CoreDataProperties.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "conjugationsArray"
             landmarkType = "24">
          </BreakpointContent>
@@ -126,8 +110,8 @@
             filePath = "ConjugationGroup+CoreDataProperties.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "conjugationsArray"
             landmarkType = "24">
          </BreakpointContent>
@@ -142,10 +126,138 @@
             filePath = "ConjugationGroup+CoreDataProperties.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "conjugationsArray"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "250EEC01-C389-4445-9E40-B03CA1320AFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/WordListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "beginsWithSearch(searchTerm:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "250EEC01-C389-4445-9E40-B03CA1320AFC - 2357b8eff9e8cba8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.WordListView.beginsWithSearch(searchTerm: Swift.String) -&gt; ()"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/WordListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "250EEC01-C389-4445-9E40-B03CA1320AFC - 2357b8eff9e8cba8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.WordListView.beginsWithSearch(searchTerm: Swift.String) -&gt; ()"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/WordListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "912">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53C284FE-8CA1-4E6E-AD43-D975BC87C7ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/WordListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "resetSearch(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53C284FE-8CA1-4E6E-AD43-D975BC87C7ED - 191bf6d72c5cf4fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.WordListView.resetSearch(callback: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/WordListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "752">
+               </Location>
+               <Location
+                  uuid = "53C284FE-8CA1-4E6E-AD43-D975BC87C7ED - 191bf6d72c5cf4fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.WordListView.resetSearch(callback: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/WordListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "744">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94A5A981-3FB5-44DD-9D1F-5C7CD9C33B88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConjugationGroup+CoreDataProperties.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "conjugationsFlatArray"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38E0AC8C-5932-42A4-BBB9-6061C5D08048"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/ConjugationRowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(searchTerm:conjugationGroup:matchingConjugation:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

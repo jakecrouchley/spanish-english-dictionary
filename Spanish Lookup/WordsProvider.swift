@@ -78,6 +78,27 @@ class WordsProvider: ObservableObject, DictParserDelegate, ConjugationParserDele
         }
     }
     
+    func fetchIDForWord(startingWith searchTerm: String) -> UUID? {
+        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
+        fetchRequest.fetchLimit = 1
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "source_word", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
+        fetchRequest.predicate = NSPredicate(format: "source_word BEGINSWITH[cd] %@", searchTerm)
+        
+        let results = try? container.viewContext.fetch(fetchRequest)
+        
+        return results?.first?.id
+    }
+    
+    func fetchWords(startingWith searchTerm: String) -> [Word] {
+        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "source_word", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
+        fetchRequest.predicate = NSPredicate(format: "source_word BEGINSWITH[cd] %@", searchTerm)
+        
+        let results = try? container.viewContext.fetch(fetchRequest)
+        
+        return results ?? []
+    }
+    
     func clearAllWords() {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: Word.fetchRequest())
         

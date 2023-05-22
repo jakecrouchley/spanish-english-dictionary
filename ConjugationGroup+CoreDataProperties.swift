@@ -87,6 +87,25 @@ extension ConjugationGroup {
         return dict
     }
     
+    public var conjugationsFlatArray: [Conjugation] {
+        let dict = self.conjugationsByMoodAndTenseDict
+        var conjugationArray: [Conjugation] = []
+        ConjugationMood.allCases.forEach { mood in
+            ConjugationTense.allCases.forEach { tense in
+                if let conjugations: [Conjugation] = dict[mood]?[tense] {
+                    let sortedConjugations = conjugations.sorted { conjugationA, conjugationB in
+                        let aType = ConjugationTypes.firstIndex(of: conjugationA.type!)
+                        let bType = ConjugationTypes.firstIndex(of: conjugationB.type!)
+            
+                        return (aType!, conjugationA.person) < (bType!, conjugationB.person)
+                    }
+                    conjugationArray.append(contentsOf: sortedConjugations)
+                }
+            }
+        }
+        return conjugationArray
+    }
+    
     public var conjugationsArray: [[[Conjugation]]] {
         let dict = self.conjugationsByMoodAndTenseDict
         var moods: [[[Conjugation]]] = []
@@ -106,38 +125,6 @@ extension ConjugationGroup {
             moods.append(tenses)
         }
         return moods
-    }
-    
-    public var conjugationsByMoodArray: [(mood: ConjugationMood, conjugations: [Conjugation])] {
-        var conjugationsByMoodArray: [(mood: ConjugationMood, conjugations: [Conjugation])] = []
-        let conjugationSet = self.conjugations as? Set<Conjugation> ?? []
-        
-        // Convert to tuple array of moods and conjugations
-        conjugationSet.forEach { conjugation in
-            let mood = ConjugationMood.init(rawValue: conjugation.mood!)!
-            let existingIndex = conjugationsByMoodArray.firstIndex { $0.mood == mood }
-            if existingIndex != nil {
-                conjugationsByMoodArray[existingIndex!].conjugations.append(conjugation)
-            } else {
-                conjugationsByMoodArray.append((mood, conjugations: [conjugation]))
-            }
-        }
-        
-        // Sort the inner conjugation groups
-        conjugationsByMoodArray = conjugationsByMoodArray.map({ moodConjugation in
-            let conjugations = moodConjugation.conjugations.sorted { conjugationA, conjugationB in
-                let aType = ConjugationTypes.firstIndex(of: conjugationA.type!)
-                let bType = ConjugationTypes.firstIndex(of: conjugationB.type!)
-    
-                return (aType!, conjugationA.person) < (bType!, conjugationB.person)
-            }
-            return (moodConjugation.mood, conjugations)
-        })
-        
-        // Sort final list by mood
-        return conjugationsByMoodArray.sorted { moodConjugationA, moodConjugationB in
-            return moodConjugationA.mood < moodConjugationB.mood
-        }
     }
 
 }
