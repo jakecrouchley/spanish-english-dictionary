@@ -254,10 +254,136 @@
             filePath = "Spanish Lookup/Views/ConjugationRowView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "init(searchTerm:conjugationGroup:matchingConjugation:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECC78812-9CBC-4A6F-B093-4277AD138E1F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/ConjugationRowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getMatchingConjugations(searchTerm:conjugations:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FB9DE56-3220-4922-8E53-1257D444E60A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/ConjugationRowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "619F90FA-07A8-46B7-9702-509ED509D431"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/ConjugationRowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getMatchingConjugations(searchTerm:conjugations:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3ED4A4F-BA41-4D20-B927-D3BFFF1AD181"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Spanish Lookup/Views/LoadingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "LoadingView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "E3ED4A4F-BA41-4D20-B927-D3BFFF1AD181 - 87df17d71c05126d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.LoadingView.body.getter : some"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/LoadingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "E3ED4A4F-BA41-4D20-B927-D3BFFF1AD181 - 9009b5f13d638e1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in variable initialization expression of Spanish_Lookup.LoadingView.images : Swift.Array&lt;SwiftUI.Image&gt;"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/LoadingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "E3ED4A4F-BA41-4D20-B927-D3BFFF1AD181 - d7ebf94c0b2ff7d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; SwiftUI.Image in variable initialization expression of Spanish_Lookup.LoadingView.images : Swift.Array&lt;SwiftUI.Image&gt;"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/LoadingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "E3ED4A4F-BA41-4D20-B927-D3BFFF1AD181 - 3c3def25d3d92ae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Spanish_Lookup.LoadingView.init() -&gt; Spanish_Lookup.LoadingView"
+                  moduleName = "Spanish Lookup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jakecrouchley/Work/Spanish%20Lookup/Spanish%20Lookup/Views/LoadingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -19,6 +19,8 @@ class WordsProvider: ObservableObject, DictParserDelegate, ConjugationParserDele
     
     static let shared = WordsProvider()
     
+    @Published var isLoading: Bool = false
+    
     static let preview: WordsProvider = {
         let wordsProvider = WordsProvider(inMemory: true)
         let context = wordsProvider.container.viewContext
@@ -60,22 +62,21 @@ class WordsProvider: ObservableObject, DictParserDelegate, ConjugationParserDele
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
-        if (!inMemory) {
-//            clearAllWords()
-//
-//            let dictParser = DictParser()
-//            dictParser.delegate = self
-//            dictParser.run()
-//
-//
-//
-//            saveWords(words: words)
-            
-//            let conjugationParser = ConjugationParser()
-//            conjugationParser.delegate = self
-//            conjugationParser.clearAll()
-//            conjugationParser.run()
-        }
+    }
+    
+    func loadWords() {
+        isLoading = true
+        clearAllWords()
+        let dictParser = DictParser()
+        dictParser.delegate = self
+        dictParser.run()
+        saveWords(words: words)
+        
+        let conjugationParser = ConjugationParser()
+        conjugationParser.delegate = self
+        conjugationParser.clearAll()
+        conjugationParser.run()
+        isLoading = false
     }
     
     func fetchIDForWord(startingWith searchTerm: String) -> UUID? {
@@ -117,7 +118,17 @@ class WordsProvider: ObservableObject, DictParserDelegate, ConjugationParserDele
         newWord["definition"] = word.definition ?? ""
         newWord["details"] = word.details ?? ""
         newWord["source_lang"] = word.source_lang ?? ""
-        newWord["first_char"] = String(word.source_word?.first ?? Character("")).lowercased()
+        if let firstChar = word.source_word?.first {
+            if firstChar == "-" {
+                let secondIndex = word.source_word!.index(word.source_word!.startIndex, offsetBy: 1)
+                let secondChar = word.source_word![secondIndex]
+                newWord["first_char"] = String(secondChar).lowercased()
+            } else {
+                newWord["first_char"] = String(firstChar).lowercased()
+            }
+        } else {
+            newWord["first_char"] = ""
+        }
         words.append(newWord)
     }
     

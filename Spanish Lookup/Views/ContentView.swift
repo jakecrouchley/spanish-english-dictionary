@@ -13,24 +13,28 @@ enum SelectedPage: String {
 }
 
 struct ContentView: View {
-    
-    @State private var selectedPage: SelectedPage = SelectedPage.dictionary
-    
-    @State private var searchTerm = ""
+    @State private var isLoading = true
     
     var body: some View {
         NavigationStack {
-            Picker("Selected Page", selection: $selectedPage) {
-                Text("Dictionary").tag(SelectedPage.dictionary)
-                Text("Conjugations").tag(SelectedPage.conjugations)
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal, 20)
-            if (selectedPage == .dictionary) {
-                WordListView()
+            if (isLoading) {
+                LoadingView()
             } else {
-                ConjugationListView(searchTerm: $searchTerm)
+                PrimaryView()
             }
+        }
+        .task {
+            let userHasInitialised = UserDefaults.standard.bool(forKey: "hasInitialised")
+            print("User has initialised: \(userHasInitialised)")
+            if (!userHasInitialised) {
+                isLoading = true
+                let start = Date()
+                WordsProvider.shared.loadWords()
+                let end = Date()
+                print("took \(end.timeIntervalSince(start))")
+                UserDefaults.standard.set(true, forKey: "hasInitialised")
+            }
+            isLoading = false
         }
     }
 }

@@ -22,12 +22,16 @@ struct ConjugationRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(conjugationGroup.infinitive ?? "")
+            Text(conjugationGroup.infinitive_english ?? "")
+                .font(.subheadline)
+                .italic()
             if (searchTerm != "" && matchingConjugation != nil) {
                 HStack {
                     Text(matchingConjugation?.conjugation ?? "")
                     Text("(\(matchingConjugation?.mood ?? "") \(matchingConjugation?.tense ?? ""))")
                 }
                 .font(.caption)
+                .padding(.top, 4)
             }
         }
         .onAppear(perform: {
@@ -42,6 +46,6 @@ struct ConjugationRowView: View {
 struct ConjugationRowView_Previews: PreviewProvider {
     let example = ConjugationGroup.example
     static var previews: some View {
-        ConjugationRowView(searchTerm: "le", conjugationGroup: ConjugationGroup.example)
+        ConjugationRowView(searchTerm: "cur", conjugationGroup: ConjugationGroup.example)
     }
 }

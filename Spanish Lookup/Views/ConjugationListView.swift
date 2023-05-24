@@ -16,7 +16,7 @@ struct ConjugationListView: View {
     
     @State var searchTerm: String = ""
     
-    init(searchTerm: Binding<String>) {
+    init() {
         let request: NSFetchRequest<ConjugationGroup> = ConjugationGroup.fetchRequest()
         request.predicate = nil
         request.sortDescriptors = nsSortDescriptors
@@ -71,7 +71,7 @@ struct ConjugationListView: View {
 struct ConjugationListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ConjugationListView(searchTerm: .constant("ver")).environment(\.managedObjectContext, WordsProvider.shared.container.viewContext)
+            ConjugationListView().environment(\.managedObjectContext, WordsProvider.shared.container.viewContext)
         }
     }
 }

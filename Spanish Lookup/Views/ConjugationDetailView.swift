@@ -16,6 +16,8 @@ struct ConjugationDetailView: View {
         VStack {
             Text(conjugationGroup.infinitive_english ?? "")
                 .font(.subheadline)
+                .padding(.horizontal, 8)
+                .padding(.top, 8)
             List {
                 ForEach(conjugationGroup.conjugationsArray, id: \.self) {mood in
                     ForEach(mood, id: \.self) { tense in
