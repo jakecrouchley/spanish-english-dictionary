@@ -9,6 +9,6 @@ Feel free to make any modifications while abiding by the license and providing a
 
 Made using:
 
-https://github.com/mananoreboton/en-es-en-Dic
-https://github.com/ghidinelli/fred-jehle-spanish-verbs
-https://github.com/lipis/flag-icons
+https://github.com/mananoreboton/en-es-en-Dic  
+https://github.com/ghidinelli/fred-jehle-spanish-verbs  
+https://github.com/lipis/flag-icons  
