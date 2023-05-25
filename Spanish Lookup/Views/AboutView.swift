@@ -16,7 +16,7 @@ struct AboutView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading) {
-                Text("Simple Offline Spanish Lookup")
+                Text("Offline Spanish Dictionary")
                     .font(.headline)
                     .fontWeight(.bold)
                 Text("A super basic offline Spanish dictionary of words and conjugations.")

@@ -11,7 +11,6 @@
 		4F6998F12A0550780026CBFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6998F02A0550780026CBFA /* ContentView.swift */; };
 		4F6998F32A0550790026CBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6998F22A0550790026CBFA /* Assets.xcassets */; };
 		4F6998F72A0550790026CBFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6998F62A0550790026CBFA /* Preview Assets.xcassets */; };
-		4F6999012A05521A0026CBFA /* jehle_verb_lookup.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F6999002A05521A0026CBFA /* jehle_verb_lookup.json */; };
 		4F6999042A0976340026CBFA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F6999022A0976340026CBFA /* Model.xcdatamodeld */; };
 		4F6999082A0ADCE90026CBFA /* DictParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6999072A0ADCE90026CBFA /* DictParser.swift */; };
 		4F69990F2A0ADE2C0026CBFA /* en-es.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4F69990A2A0ADE2C0026CBFA /* en-es.xml */; };
@@ -34,6 +33,8 @@
 		4F9BF36B2A1DF23D00A49D91 /* PrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BF36A2A1DF23D00A49D91 /* PrimaryView.swift */; };
 		4F9BF36D2A1DF76C00A49D91 /* AnimatingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BF36C2A1DF76C00A49D91 /* AnimatingImage.swift */; };
 		4F9BF3712A1E0E6200A49D91 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9BF3702A1E0E6200A49D91 /* AboutView.swift */; };
+		4F9BF3732A1F535800A49D91 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BF3722A1F535800A49D91 /* license.txt */; };
+		4F9BF3752A1F538B00A49D91 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4F9BF3742A1F538B00A49D91 /* LICENSE */; };
 		4FFFFA782A1BE4E5000795A8 /* ConjugationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFFA772A1BE4E5000795A8 /* ConjugationRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +45,6 @@
 		4F6998F22A0550790026CBFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F6998F42A0550790026CBFA /* Spanish_Lookup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spanish_Lookup.entitlements; sourceTree = "<group>"; };
 		4F6998F62A0550790026CBFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4F6999002A05521A0026CBFA /* jehle_verb_lookup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jehle_verb_lookup.json; sourceTree = "<group>"; };
 		4F6999032A0976340026CBFA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4F6999072A0ADCE90026CBFA /* DictParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictParser.swift; sourceTree = "<group>"; };
 		4F69990A2A0ADE2C0026CBFA /* en-es.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "en-es.xml"; sourceTree = "<group>"; };
@@ -60,14 +60,16 @@
 		4F9B19CC2A1A250D00A7F01D /* jehle_verb_database.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = jehle_verb_database.csv; path = "../../../../spanish-learning-app/fred-jehle-spanish-verbs/jehle_verb_database.csv"; sourceTree = "<group>"; };
 		4F9B19CE2A1A95E200A7F01D /* ConjugationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugationListView.swift; sourceTree = "<group>"; };
 		4F9B19D02A1AA53200A7F01D /* ConjugationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugationDetailView.swift; sourceTree = "<group>"; };
-		4F9B19D22A1AAB7700A7F01D /* ConjugationGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConjugationGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		4F9B19D32A1AAB7700A7F01D /* ConjugationGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConjugationGroup+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4F9B19D22A1AAB7700A7F01D /* ConjugationGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ConjugationGroup+CoreDataClass.swift"; path = "Spanish Lookup/Model/ConjugationGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4F9B19D32A1AAB7700A7F01D /* ConjugationGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ConjugationGroup+CoreDataProperties.swift"; path = "Spanish Lookup/Model/ConjugationGroup+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4F9BF3652A1CFA7800A49D91 /* Spanish-Lookup-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Spanish-Lookup-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4F9BF3662A1D331E00A49D91 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F9BF3682A1D48E200A49D91 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4F9BF36A2A1DF23D00A49D91 /* PrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryView.swift; sourceTree = "<group>"; };
 		4F9BF36C2A1DF76C00A49D91 /* AnimatingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingImage.swift; sourceTree = "<group>"; };
 		4F9BF3702A1E0E6200A49D91 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		4F9BF3722A1F535800A49D91 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		4F9BF3742A1F538B00A49D91 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4FFFFA772A1BE4E5000795A8 /* ConjugationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjugationRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +113,6 @@
 			children = (
 				4F9B19CB2A1A20FF00A7F01D /* conjugations */,
 				4F6999092A0ADDFE0026CBFA /* words */,
-				4F6999002A05521A0026CBFA /* jehle_verb_lookup.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 		4F6999092A0ADDFE0026CBFA /* words */ = {
 			isa = PBXGroup;
 			children = (
+				4F9BF3742A1F538B00A49D91 /* LICENSE */,
 				4F69990A2A0ADE2C0026CBFA /* en-es.xml */,
 				4F69990B2A0ADE2C0026CBFA /* es-en.xml */,
 				4F69990D2A0ADE2C0026CBFA /* es-en-verbs.xml */,
@@ -131,10 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				4F9BF3652A1CFA7800A49D91 /* Spanish-Lookup-Info.plist */,
-				4F9B19D22A1AAB7700A7F01D /* ConjugationGroup+CoreDataClass.swift */,
-				4F9B19D32A1AAB7700A7F01D /* ConjugationGroup+CoreDataProperties.swift */,
-				4F6998FF2A0551F30026CBFA /* Resources */,
 				4F6998EE2A0550780026CBFA /* Spanish_LookupApp.swift */,
+				4F6998FF2A0551F30026CBFA /* Resources */,
 				4F9B19C62A1A1C8900A7F01D /* Views */,
 				4F6999072A0ADCE90026CBFA /* DictParser.swift */,
 				4F6998F22A0550790026CBFA /* Assets.xcassets */,
@@ -153,6 +153,8 @@
 		4F9B19C52A1A1C6D00A7F01D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F9B19D22A1AAB7700A7F01D /* ConjugationGroup+CoreDataClass.swift */,
+				4F9B19D32A1AAB7700A7F01D /* ConjugationGroup+CoreDataProperties.swift */,
 				4F9B19C32A19328F00A7F01D /* Word+Example.swift */,
 			);
 			path = Model;
@@ -178,6 +180,7 @@
 		4F9B19CB2A1A20FF00A7F01D /* conjugations */ = {
 			isa = PBXGroup;
 			children = (
+				4F9BF3722A1F535800A49D91 /* license.txt */,
 				4F9B19CC2A1A250D00A7F01D /* jehle_verb_database.csv */,
 			);
 			path = conjugations;
@@ -243,8 +246,9 @@
 			files = (
 				4F69990F2A0ADE2C0026CBFA /* en-es.xml in Resources */,
 				4F9B19CD2A1A250E00A7F01D /* jehle_verb_database.csv in Resources */,
-				4F6999012A05521A0026CBFA /* jehle_verb_lookup.json in Resources */,
 				4F9BF3672A1D331E00A49D91 /* Launch Screen.storyboard in Resources */,
+				4F9BF3732A1F535800A49D91 /* license.txt in Resources */,
+				4F9BF3752A1F538B00A49D91 /* LICENSE in Resources */,
 				4F6999112A0ADE2C0026CBFA /* es-en-verbs.xml in Resources */,
 				4F6998F72A0550790026CBFA /* Preview Assets.xcassets in Resources */,
 				4F6998F32A0550790026CBFA /* Assets.xcassets in Resources */,
