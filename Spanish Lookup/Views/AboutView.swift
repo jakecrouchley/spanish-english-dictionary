@@ -47,6 +47,16 @@ struct AboutView: View {
                 alignment: .center
             )
             .font(.subheadline)
+            .padding(.bottom, 16)
+            VStack(alignment: .leading) {
+                Text("The code for this app is open source and available here:")
+                    .padding(.bottom, 4)
+                Text("https://github.com/jakecrouchley/spanish-english-dictionary")
+                    .padding(.bottom, 4)
+                Text("Feel free to make modifications or suggest improvenments, while abiding by the license.")
+                    .padding(.bottom, 4)
+                    .font(.subheadline)
+            }
             Spacer()
             VStack(alignment: .leading, spacing: 8) {
                 Text("Made using:")
