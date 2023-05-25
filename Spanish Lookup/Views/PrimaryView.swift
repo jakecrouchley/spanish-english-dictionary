@@ -19,12 +19,28 @@ struct PrimaryView: View {
         .padding(.horizontal, 20)
         if (selectedPage == .dictionary) {
             WordListView()
-                .navigationBarTitle("Spanish Lookup")
+                .navigationBarTitle("Dictionary")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AboutView()) {
+                            Label("About", systemImage: "info.circle")
+
+                        }
+                    }
+                }
         } else {
             ConjugationListView()
-                .navigationBarTitle("Spanish Lookup")
+                .navigationBarTitle("Conjugations")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AboutView()) {
+                            Label("About", systemImage: "info.circle")
+
+                        }
+                    }
+                }
         }
     }
 }

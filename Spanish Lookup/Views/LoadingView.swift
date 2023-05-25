@@ -18,11 +18,11 @@ struct LoadingView: View {
                 .frame(width: 50, height: 50)
                 .rotationEffect(Angle(degrees: rotation))
                 .onTapGesture {
-                    rotation += 180
+                    rotation += 360
                 }
                 .animation(.easeInOut(duration: 1), value: rotation)
-            Text("Loading, please wait")
-                .font(Font.custom("SourceSansPro-Bold", size: 18))
+            Text("Loading database, please wait")
+                .padding(.top, 8)
         }
     }
 }

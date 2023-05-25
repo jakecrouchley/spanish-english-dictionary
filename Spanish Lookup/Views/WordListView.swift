@@ -64,6 +64,7 @@ struct WordListView: View {
                 }
                 .searchable(text: $searchTerm, placement: .navigationBarDrawer(displayMode: .always))
                 .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
                 .padding(.zero)
             }
             VStack {
