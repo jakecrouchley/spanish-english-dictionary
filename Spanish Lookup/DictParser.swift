@@ -7,14 +7,6 @@
 
 import Foundation
 
-
-struct DraftWord {
-    var source_word: String?
-    var source_lang: String?
-    var definition: String?
-    var details: String?
-}
-
 class DictParser: NSObject, XMLParserDelegate {
     
     var delegate: DictParserDelegate?
@@ -22,13 +14,59 @@ class DictParser: NSObject, XMLParserDelegate {
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
     
     var timestamp = 0
-    var sectionCount = 0
     var accumText = ""
-    
-    var startingLetter = ""
     
     var draftWord: DraftWord?
     var sourceLang = ""
+    
+    func run() {
+        parseEnToEsDict()
+        parseEsToEnDict()
+    }
+    
+    func reset() {
+        accumText = ""
+        sourceLang = ""
+    }
+    
+    func parseEnToEsDict() {
+        reset()
+        if let path = Bundle.main.path(forResource: "en-es", ofType: "xml") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let xmlData = try Data(contentsOf: url)
+                let xmlParser = XMLParser(data: xmlData)
+                xmlParser.delegate = self
+                xmlParser.parse()
+            } catch let error {
+                // Handle error here
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
+    }
+    
+    func parseEsToEnDict() {
+        reset()
+        if let path = Bundle.main.path(forResource: "es-en", ofType: "xml") {
+            do {
+                let url = URL(fileURLWithPath: path)
+                let xmlData = try Data(contentsOf: url)
+                print(xmlData.count)
+                let xmlParser = XMLParser(data: xmlData)
+                xmlParser.delegate = self
+                xmlParser.parse()
+            } catch let error {
+                // Handle error here
+                print(error)
+            }
+        } else {
+            print("File not found")
+        }
+    }
+    
+    ///-- Mark: XMLParserDelegate
     
     func parserDidStartDocument(_ parser: XMLParser) {
         timestamp = Int(NSDate().timeIntervalSince1970 * 1000)
@@ -45,10 +83,6 @@ class DictParser: NSObject, XMLParserDelegate {
             sourceLang = attributeDict["from"] ?? "en"
             break
         case "l":
-            // New section
-            let index = alphabet.index(alphabet.startIndex, offsetBy: sectionCount)
-            startingLetter = String(alphabet[index])
-            sectionCount += 1
             break
         case "w":
             // New word

@@ -38,3 +38,17 @@ struct WordRow: View {
         }
     }
 }
+
+struct WordRow_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            WordRow(word: Word.example)
+                .previewLayout(.sizeThatFits)
+            List {
+                WordRow(word: Word.example)
+                    .previewLayout(.fixed(width: 300, height: 100))
+            }
+        }
+    }
+}
+

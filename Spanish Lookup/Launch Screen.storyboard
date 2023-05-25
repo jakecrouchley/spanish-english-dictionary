@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar userInteractionEnabled="NO" contentMode="redraw" searchBarStyle="minimal" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-qk-Oag">
+                                <rect key="frame" x="0.0" y="94" width="393" height="56"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="18" bottom="0.0" right="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="01J-lp-oVM" id="wvh-DS-pjR"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Ek-80-X0t">
+                                <rect key="frame" x="18" y="158" width="357" height="32"/>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="5Ek-80-X0t" secondAttribute="trailing" priority="1" constant="18" id="6Px-36-W0y"/>
+                            <constraint firstItem="yfV-qk-Oag" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="35" id="7A3-DP-btC"/>
+                            <constraint firstItem="yfV-qk-Oag" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="H3c-D2-7fZ"/>
+                            <constraint firstItem="5Ek-80-X0t" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="18" id="Vok-Aa-mBd"/>
+                            <constraint firstItem="5Ek-80-X0t" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="WbV-4F-lgx"/>
+                            <constraint firstItem="yfV-qk-Oag" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ZLb-g3-oee"/>
+                            <constraint firstItem="5Ek-80-X0t" firstAttribute="top" secondItem="yfV-qk-Oag" secondAttribute="bottom" constant="8" id="qa7-al-PWA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+</document>

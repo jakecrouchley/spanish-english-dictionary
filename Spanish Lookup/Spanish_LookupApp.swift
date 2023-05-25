@@ -13,7 +13,7 @@ struct Spanish_LookupApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, DataController.shared.container.viewContext)
+            ContentView().environment(\.managedObjectContext, WordsProvider.shared.container.viewContext)
         }
     }
 }

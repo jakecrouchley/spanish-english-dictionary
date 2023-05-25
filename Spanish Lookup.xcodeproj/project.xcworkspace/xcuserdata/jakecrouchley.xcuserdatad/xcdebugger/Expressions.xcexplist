@@ -3,7 +3,48 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "DictParser.parser(_:didStartElement:namespaceURI:qualifiedName:attributes:):DictParser.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "alphabet">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ConjugationGroup.conjugationsArray.getter:ConjugationGroup+CoreDataProperties.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ConjugationMood.RawValue(stringLiteral: &quot;Imperative Affirmative&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DataController.parseDict():DataController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ConjugationRowView.init(searchTerm:conjugationGroup:matchingConjugation:):ConjugationRowView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "conjugationGroup.conjugationsFlatArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ConjugationGroup.conjugationsArray.getter:ConjugationGroup+CoreDataProperties.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ConjugationGroup.conjugationsFlatArray.getter:ConjugationGroup+CoreDataProperties.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "conjugation.conjugation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ConjugationParser.parse():ConjugationParser.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in ConjugationParser.parse():ConjugationParser.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
